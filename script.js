@@ -1,3 +1,11 @@
+/* ============ SAFETY: fail visibly, not silently, if Chart.js didn't load ============ */
+if (typeof Chart === 'undefined') {
+  document.querySelectorAll('.chart-wrap, .kpi-row').forEach(function(el){
+    el.innerHTML = '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12.5px;color:#E5484D;padding:16px;border:1px solid #E5484D;">⚠ Biblioteka wykresów (Chart.js) nie została załadowana z CDN — sprawdź połączenie internetowe albo czy blokada reklam / firewall sieciowy nie blokuje cdn.jsdelivr.net, i odśwież stronę.</div>';
+  });
+  throw new Error('Chart.js not loaded — aborting dashboard init.');
+}
+
 /* ============ MOBILE NAV ============ */
 document.getElementById('burgerBtn').addEventListener('click',()=>{
   document.getElementById('mobileMenu').classList.toggle('open');
