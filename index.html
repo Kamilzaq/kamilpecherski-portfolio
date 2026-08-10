@@ -1,382 +1,633 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Analityczne — Gospodarka Magazynowa</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Analityczne — Gospodarka Magazynowa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="chart.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="wrap">
+        <div class="logo"><span class="dot"></span>A-01 // PORTFOLIO</div>
+        <ul class="navlinks">
+          <li><a href="#o-mnie">O mnie</a></li>
+          <li><a href="#doswiadczenie">Doświadczenie</a></li>
+          <li><a href="#projekty">Projekty</a></li>
+          <li><a href="#dashboardy">Dashboardy</a></li>
+          <li><a href="#umiejetnosci">Umiejętności</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+        <a href="#kontakt" class="navcta">Kontakt</a>
+        <button class="burger" id="burgerBtn" aria-label="Menu">≡</button>
+      </nav>
+      <div class="mobilemenu" id="mobileMenu">
+        <a href="#o-mnie">O mnie</a>
+        <a href="#doswiadczenie">Doświadczenie</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#dashboardy">Dashboardy</a>
+        <a href="#umiejetnosci">Umiejętności</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </header>
 
-<header>
-  <nav class="wrap">
-    <div class="logo"><span class="dot"></span>A-01 // PORTFOLIO</div>
-    <ul class="navlinks">
-      <li><a href="#o-mnie">O mnie</a></li>
-      <li><a href="#doswiadczenie">Doświadczenie</a></li>
-      <li><a href="#projekty">Projekty</a></li>
-      <li><a href="#dashboardy">Dashboardy</a></li>
-      <li><a href="#umiejetnosci">Umiejętności</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-    <a href="#kontakt" class="navcta">Kontakt</a>
-    <button class="burger" id="burgerBtn" aria-label="Menu">≡</button>
-  </nav>
-  <div class="mobilemenu" id="mobileMenu">
-    <a href="#o-mnie">O mnie</a>
-    <a href="#doswiadczenie">Doświadczenie</a>
-    <a href="#projekty">Projekty</a>
-    <a href="#dashboardy">Dashboardy</a>
-    <a href="#umiejetnosci">Umiejętności</a>
-    <a href="#kontakt">Kontakt</a>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow">Manifest // Profil analityczny</div>
-        <h1>Z magazynu<br>do <em>danych.</em></h1>
-        <div class="hero-tag">
-          Analityk z wykształcenia. Operator z doświadczenia.<br>
-          Łączę statystykę ze studiów z codzienną pracą przy przyjęciach,<br>
-          wydaniach i kontroli rotacji towaru.
-        </div>
-        <div class="hero-btns">
-          <a href="#dashboardy" class="btn btn-primary">Zobacz dashboardy</a>
-          <a href="#projekty" class="btn btn-ghost">Studia przypadków</a>
+    <!-- ============ HERO ============ -->
+    <section class="hero" style="border-bottom: none">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Manifest // Profil analityczny</div>
+            <h1>Z magazynu<br />do <em>danych.</em></h1>
+            <div class="hero-tag">
+              Analityk z wykształcenia. Operator z doświadczenia.<br />
+              Łączę statystykę ze studiów z codzienną pracą przy przyjęciach,<br />
+              wydaniach i kontroli rotacji towaru.
+            </div>
+            <div class="hero-btns">
+              <a href="#dashboardy" class="btn btn-primary"
+                >Zobacz dashboardy</a
+              >
+              <a href="#projekty" class="btn btn-ghost">Studia przypadków</a>
+            </div>
+          </div>
+          <div class="manifest">
+            <div class="manifest-head">
+              <span>Cargo manifest</span>
+              <span>Nr AN-2026</span>
+            </div>
+            <div class="manifest-row">
+              <span class="label">Obsługiwane projekty</span>
+              <span class="value"
+                >4<small>Liewood / FittinQ / Lampenwelt / Shyne</small></span
+              >
+            </div>
+            <div class="manifest-row">
+              <span class="label">Zakres operacyjny</span>
+              <span class="value"
+                >Przyjęcia + wydania<small
+                  >kontrola rotacji artykułów</small
+                ></span
+              >
+            </div>
+            <div class="manifest-row">
+              <span class="label">Wykształcenie</span>
+              <span class="value"
+                >Analityka<small>studia ukończone</small></span
+              >
+            </div>
+            <div class="manifest-row">
+              <span class="label">Narzędzia</span>
+              <span class="value"
+                >Excel · SQL · BI<small>+ Python (pandas)</small></span
+              >
+            </div>
+          </div>
         </div>
       </div>
-      <div class="manifest">
-        <div class="manifest-head">
-          <span>Cargo manifest</span>
-          <span>Nr AN-2026</span>
-        </div>
-        <div class="manifest-row">
-          <span class="label">Obsługiwane projekty</span>
-          <span class="value">4<small>Liewood / FittinQ / Lampenwelt / Shyne</small></span>
-        </div>
-        <div class="manifest-row">
-          <span class="label">Zakres operacyjny</span>
-          <span class="value">Przyjęcia + wydania<small>kontrola rotacji artykułów</small></span>
-        </div>
-        <div class="manifest-row">
-          <span class="label">Wykształcenie</span>
-          <span class="value">Analityka<small>studia ukończone</small></span>
-        </div>
-        <div class="manifest-row">
-          <span class="label">Narzędzia</span>
-          <span class="value">Excel · SQL · BI<small>+ Python (pandas)</small></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<div class="section-divider"><div class="barcode" id="barcode1"></div></div>
+    <div class="section-divider"><div class="barcode" id="barcode1"></div></div>
 
-<!-- ============ O MNIE ============ -->
-<section id="o-mnie">
-  <div class="wrap about-grid">
-    <div>
-      <div class="eyebrow">A-01 // O mnie</div>
-      <h2>Praktyk<br>i analityk</h2>
-    </div>
-    <div>
-      <p>Ukończyłem studia o profilu analitycznym, a codzienną praktykę zdobywam pracując bezpośrednio na magazynie — przy <strong>przyjęciu i wydaniu towaru</strong> oraz przy <strong>kontroli artykułów rotujących i nierotujących</strong>. To połączenie daje mi coś, czego nie da się wyczytać z podręcznika: rozumiem, skąd biorą się dane, zanim zacznę je analizować.</p>
-      <p>Na co dzień pracuję przy obsłudze czterech projektów logistycznych o różnej charakterystyce popytu i asortymentu — od produktów sezonowych premium, przez sprzęt sportowy, po oświetlenie i kosmetyki. To naturalne laboratorium do analizy rotacji, prognozowania zapasów i optymalizacji przestrzeni magazynowej.</p>
-      <p>Ta strona to moje portfolio analityczne — dashboardy poniżej pokazują <strong>metodologię i podejście</strong>, jakie stosuję w praktyce (dane w dashboardach są syntetyczne, zbudowane na potrzeby prezentacji — więcej w sekcji Dashboardy).</p>
-      <div class="id-card" style="margin-top:26px;">
-        <div class="idrow"><span>Rola obecna</span><span>Operator magazynowy / kontrola rotacji</span></div>
-        <div class="idrow"><span>Wykształcenie</span><span>Studia analityczne (ukończone)</span></div>
-        <div class="idrow"><span>Szukam</span><span>Roli: Analityk danych / Analityk łańcucha dostaw</span></div>
-        <div class="idrow"><span>Lokalizacja</span><span>Wrocław, Polska</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DOŚWIADCZENIE ============ -->
-<section id="doswiadczenie">
-  <div class="wrap">
-    <div class="eyebrow">B-02 // Doświadczenie</div>
-    <h2 style="margin-bottom:42px;">Ścieżka</h2>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-date">Obecnie</div>
-        <h4>Operator magazynowy — przyjęcia, wydania, kontrola rotacji</h4>
-        <p>Codzienna obsługa przyjęć i wydań towaru dla czterech projektów: Liewood, FittinQ, Lampenwelt i Shyne. Kontrola artykułów rotujących i nierotujących, zgłaszanie rozbieżności, wsparcie inwentaryzacji cyklicznych i utrzymanie dokładności stanów magazynowych.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">Wcześniej</div>
-        <h4>Studia — kierunek analityczny</h4>
-        <p>Ukończone studia z naciskiem na analizę danych, statystykę i metody ilościowe — fundament, na którym buduję dashboardy prezentowane na tej stronie.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"><div class="barcode" id="barcode2"></div></div>
-
-<!-- ============ PROJEKTY / CASE STUDIES ============ -->
-<section id="projekty">
-  <div class="wrap">
-    <div class="eyebrow">C-03 // Projekty</div>
-    <h2 style="margin-bottom:20px;">Studia przypadków</h2>
-    <div class="note">
-      Uwaga: nazwy klientów i liczby poniżej są przykładowe / ilustracyjne — pokazują sposób myślenia i metodologię,
-      nie rzeczywiste dane firmowe (dane operacyjne pracodawcy są poufne). Realne wyniki opisuję ustnie, na rozmowie.
-    </div>
-    <div class="cases">
-
-      <div class="case-card">
-        <div class="case-tag-head"><span class="id">PROJEKT A</span><span class="ind">Design dziecięcy — premium</span></div>
-        <div class="case-body">
-          <h4>Kompletacja pod presją sezonowych szczytów</h4>
-          <div class="case-field"><div class="k">Problem</div><div class="v">Sezonowe piki wydań wydłużały czas kompletacji i zwiększały liczbę błędów wysyłkowych.</div></div>
-          <div class="case-field"><div class="k">Działanie</div><div class="v">Analiza ABC/XYZ artykułów, przeniesienie top rotujących SKU bliżej stref pakowania, aktualizacja priorytetów pickingu.</div></div>
-          <div class="case-field"><div class="k">Efekt</div><div class="v">Krótszy dystans pickingu dla najczęściej wydawanych pozycji, mniej pilnych interwencji w szczycie sezonu.</div></div>
+    <!-- ============ O MNIE ============ -->
+    <section id="o-mnie">
+      <div class="wrap about-grid">
+        <div>
+          <div class="eyebrow">A-01 // O mnie</div>
+          <h2>Praktyk<br />i analityk</h2>
         </div>
-        <div class="case-metrics">
-          <div class="case-metric"><b>~18%</b>krótszy czas kompletacji*</div>
-          <div class="case-metric"><b>A/X</b>kategoria wiodąca</div>
+        <div>
+          <p>
+            Ukończyłem studia o profilu analitycznym, a codzienną praktykę
+            zdobywam pracując bezpośrednio na magazynie — przy
+            <strong>przyjęciu i wydaniu towaru</strong> oraz przy
+            <strong>kontroli artykułów rotujących i nierotujących</strong>. To
+            połączenie daje mi coś, czego nie da się wyczytać z podręcznika:
+            rozumiem, skąd biorą się dane, zanim zacznę je analizować.
+          </p>
+          <p>
+            Na co dzień pracuję przy obsłudze czterech projektów logistycznych o
+            różnej charakterystyce popytu i asortymentu — od produktów
+            sezonowych premium, przez sprzęt sportowy, po oświetlenie i
+            kosmetyki. To naturalne laboratorium do analizy rotacji,
+            prognozowania zapasów i optymalizacji przestrzeni magazynowej.
+          </p>
+          <p>
+            Ta strona to moje portfolio analityczne — dashboardy poniżej
+            pokazują <strong>metodologię i podejście</strong>, jakie stosuję w
+            praktyce (dane w dashboardach są syntetyczne, zbudowane na potrzeby
+            prezentacji — więcej w sekcji Dashboardy).
+          </p>
+          <div class="id-card" style="margin-top: 26px">
+            <div class="idrow">
+              <span>Rola obecna</span
+              ><span>Operator magazynowy / kontrola rotacji</span>
+            </div>
+            <div class="idrow">
+              <span>Wykształcenie</span
+              ><span>Studia analityczne (ukończone)</span>
+            </div>
+            <div class="idrow">
+              <span>Szukam</span
+              ><span>Roli: Analityk danych / Analityk łańcucha dostaw</span>
+            </div>
+            <div class="idrow">
+              <span>Lokalizacja</span><span>Wrocław, Polska</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="case-card">
-        <div class="case-tag-head"><span class="id">PROJEKT B</span><span class="ind">Sprzęt sportowy</span></div>
-        <div class="case-body">
-          <h4>Nierotujące SKU blokujące strefy wysokiego zagęszczenia</h4>
-          <div class="case-field"><div class="k">Problem</div><div class="v">Wolno rotujące artykuły zajmowały miejsca w strefach o najlepszej dostępności.</div></div>
-          <div class="case-field"><div class="k">Działanie</div><div class="v">Cykliczna kontrola rotacji, klasyfikacja C/Z, rekomendacja przeniesienia do stref niskiej rotacji.</div></div>
-          <div class="case-field"><div class="k">Efekt</div><div class="v">Odzyskana przestrzeń dla towaru rotującego, prostsza inwentaryzacja pozycji martwych.</div></div>
-        </div>
-        <div class="case-metrics">
-          <div class="case-metric"><b>~12%</b>odzyskanej przestrzeni*</div>
-          <div class="case-metric"><b>C/Z</b>kategoria problemowa</div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-tag-head"><span class="id">PROJEKT C</span><span class="ind">Oświetlenie domowe</span></div>
-        <div class="case-body">
-          <h4>Rozbieżności po dużych dostawach paletowych</h4>
-          <div class="case-field"><div class="k">Problem</div><div class="v">Duże, nieregularne dostawy generowały rozbieżności między stanem systemowym a fizycznym.</div></div>
-          <div class="case-field"><div class="k">Działanie</div><div class="v">Standaryzacja checklisty kontroli jakości przy przyjęciu, dwuetapowa weryfikacja ilości dla dostaw powyżej progu.</div></div>
-          <div class="case-field"><div class="k">Efekt</div><div class="v">Mniej korekt stanu po inwentaryzacji, szybsze wykrywanie błędów u źródła.</div></div>
-        </div>
-        <div class="case-metrics">
-          <div class="case-metric"><b>↓</b>rozbieżności inwent.*</div>
-          <div class="case-metric"><b>QC</b>proces wdrożony</div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-tag-head"><span class="id">PROJEKT D</span><span class="ind">Kosmetyki i biżuteria</span></div>
-        <div class="case-body">
-          <h4>Zmienny popyt, trudne planowanie zapasu bezpieczeństwa</h4>
-          <div class="case-field"><div class="k">Problem</div><div class="v">Wysoka zmienność popytu utrudniała ustalenie właściwego poziomu zapasu i punktu zamówienia.</div></div>
-          <div class="case-field"><div class="k">Działanie</div><div class="v">Prosty model prognozy (średnia krocząca + trend) do wyznaczania punktu zamówienia — metodologia pokazana w dashboardzie obok.</div></div>
-          <div class="case-field"><div class="k">Efekt</div><div class="v">Wcześniejsze ostrzeganie o zbliżającym się braku zapasu, mniej pilnych zamówień awaryjnych.</div></div>
-        </div>
-        <div class="case-metrics">
-          <div class="case-metric"><b>14 dni</b>horyzont prognozy</div>
-          <div class="case-metric"><b>X/Y/Z</b>wys. zmienność</div>
+    <!-- ============ DOŚWIADCZENIE ============ -->
+    <section id="doswiadczenie">
+      <div class="wrap">
+        <div class="eyebrow">B-02 // Doświadczenie</div>
+        <h2 style="margin-bottom: 42px">Ścieżka</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">Obecnie</div>
+            <h4>Operator magazynowy — przyjęcia, wydania, kontrola rotacji</h4>
+            <p>
+              Codzienna obsługa przyjęć i wydań towaru dla czterech projektów:
+              Liewood, FittinQ, Lampenwelt i Shyne. Kontrola artykułów
+              rotujących i nierotujących, zgłaszanie rozbieżności, wsparcie
+              inwentaryzacji cyklicznych i utrzymanie dokładności stanów
+              magazynowych.
+            </p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">Wcześniej</div>
+            <h4>Studia — kierunek analityczny</h4>
+            <p>
+              Ukończone studia z naciskiem na analizę danych, statystykę i
+              metody ilościowe — fundament, na którym buduję dashboardy
+              prezentowane na tej stronie.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-    <p style="margin-top:16px;font-size:11.5px;font-family:var(--font-mono);">* wartości ilustracyjne — do zastąpienia rzeczywistymi, możliwymi do omówienia na rozmowie</p>
-  </div>
-</section>
+    <div class="section-divider"><div class="barcode" id="barcode2"></div></div>
 
-<div class="section-divider"><div class="barcode" id="barcode3"></div></div>
-
-<!-- ============ DASHBOARDY ============ -->
-<section id="dashboardy">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">D-04 // Dashboardy</div>
-        <h2>Analiza w praktyce</h2>
-      </div>
-      <p style="max-width:420px;font-size:13.5px;">Dane poniżej są <strong style="color:var(--text)">syntetyczne</strong> — generowane w przeglądarce na potrzeby prezentacji, żeby nie ujawniać danych operacyjnych pracodawcy. Metody (regresja, MAPE, klasyfikacja ABC/XYZ) są rzeczywiste.</p>
-    </div>
-
-    <div class="dash-tabs">
-      <button class="dash-tab active" data-tab="inv">Stany magazynowe + prognoza</button>
-      <button class="dash-tab" data-tab="abc">Rotacja ABC/XYZ</button>
-      <button class="dash-tab" data-tab="lead">Czasy realizacji</button>
-    </div>
-
-    <!-- ---- PANEL 1: INVENTORY + FORECAST (priority) ---- -->
-    <div class="dash-panel active" id="panel-inv">
-      <div class="dash-controls">
-        <div><label>Projekt</label>
-          <select id="clientSelect">
-            <option value="0">Projekt A — design dziecięcy</option>
-            <option value="1">Projekt B — sprzęt sportowy</option>
-            <option value="2">Projekt C — oświetlenie</option>
-            <option value="3">Projekt D — kosmetyki/biżuteria</option>
-          </select>
+    <!-- ============ PROJEKTY / CASE STUDIES ============ -->
+    <section id="projekty">
+      <div class="wrap">
+        <div class="eyebrow">C-03 // Projekty</div>
+        <h2 style="margin-bottom: 20px">Studia przypadków</h2>
+        <div class="note">
+          Uwaga: nazwy klientów i liczby poniżej są przykładowe / ilustracyjne —
+          pokazują sposób myślenia i metodologię, nie rzeczywiste dane firmowe
+          (dane operacyjne pracodawcy są poufne). Realne wyniki opisuję ustnie,
+          na rozmowie.
         </div>
-        <div><label>Kategoria</label>
-          <select id="categorySelect">
-            <option value="rotating">Artykuły rotujące</option>
-            <option value="nonrotating">Artykuły nierotujące</option>
-          </select>
+        <div class="cases">
+          <div class="case-card">
+            <div class="case-tag-head">
+              <span class="id">PROJEKT A</span
+              ><span class="ind">Design dziecięcy — premium</span>
+            </div>
+            <div class="case-body">
+              <h4>Kompletacja pod presją sezonowych szczytów</h4>
+              <div class="case-field">
+                <div class="k">Problem</div>
+                <div class="v">
+                  Sezonowe piki wydań wydłużały czas kompletacji i zwiększały
+                  liczbę błędów wysyłkowych.
+                </div>
+              </div>
+              <div class="case-field">
+                <div class="k">Działanie</div>
+                <div class="v">
+                  Analiza ABC/XYZ artykułów, przeniesienie top rotujących SKU
+                  bliżej stref pakowania, aktualizacja priorytetów pickingu.
+                </div>
+              </div>
+              <div class="case-field">
+                <div class="k">Efekt</div>
+                <div class="v">
+                  Krótszy dystans pickingu dla najczęściej wydawanych pozycji,
+                  mniej pilnych interwencji w szczycie sezonu.
+                </div>
+              </div>
+            </div>
+            <div class="case-metrics">
+              <div class="case-metric">
+                <b>~18%</b>krótszy czas kompletacji*
+              </div>
+              <div class="case-metric"><b>A/X</b>kategoria wiodąca</div>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-tag-head">
+              <span class="id">PROJEKT B</span
+              ><span class="ind">Sprzęt sportowy</span>
+            </div>
+            <div class="case-body">
+              <h4>Nierotujące SKU blokujące strefy wysokiego zagęszczenia</h4>
+              <div class="case-field">
+                <div class="k">Problem</div>
+                <div class="v">
+                  Wolno rotujące artykuły zajmowały miejsca w strefach o
+                  najlepszej dostępności.
+                </div>
+              </div>
+              <div class="case-field">
+                <div class="k">Działanie</div>
+                <div class="v">
+                  Cykliczna kontrola rotacji, klasyfikacja C/Z, rekomendacja
+                  przeniesienia do stref niskiej rotacji.
+                </div>
+              </div>
+              <div class="case-field">
+                <div class="k">Efekt</div>
+                <div class="v">
+                  Odzyskana przestrzeń dla towaru rotującego, prostsza
+                  inwentaryzacja pozycji martwych.
+                </div>
+              </div>
+            </div>
+            <div class="case-metrics">
+              <div class="case-metric"><b>~12%</b>odzyskanej przestrzeni*</div>
+              <div class="case-metric"><b>C/Z</b>kategoria problemowa</div>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-tag-head">
+              <span class="id">PROJEKT C</span
+              ><span class="ind">Oświetlenie domowe</span>
+            </div>
+            <div class="case-body">
+              <h4>Rozbieżności po dużych dostawach paletowych</h4>
+              <div class="case-field">
+                <div class="k">Problem</div>
+                <div class="v">
+                  Duże, nieregularne dostawy generowały rozbieżności między
+                  stanem systemowym a fizycznym.
+                </div>
+              </div>
+              <div class="case-field">
+                <div class="k">Działanie</div>
+                <div class="v">
+                  Standaryzacja checklisty kontroli jakości przy przyjęciu,
+                  dwuetapowa weryfikacja ilości dla dostaw powyżej progu.
+                </div>
+              </div>
+              <div class="case-field">
+                <div class="k">Efekt</div>
+                <div class="v">
+                  Mniej korekt stanu po inwentaryzacji, szybsze wykrywanie
+                  błędów u źródła.
+                </div>
+              </div>
+            </div>
+            <div class="case-metrics">
+              <div class="case-metric"><b>↓</b>rozbieżności inwent.*</div>
+              <div class="case-metric"><b>QC</b>proces wdrożony</div>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-tag-head">
+              <span class="id">PROJEKT D</span
+              ><span class="ind">Kosmetyki i biżuteria</span>
+            </div>
+            <div class="case-body">
+              <h4>Zmienny popyt, trudne planowanie zapasu bezpieczeństwa</h4>
+              <div class="case-field">
+                <div class="k">Problem</div>
+                <div class="v">
+                  Wysoka zmienność popytu utrudniała ustalenie właściwego
+                  poziomu zapasu i punktu zamówienia.
+                </div>
+              </div>
+              <div class="case-field">
+                <div class="k">Działanie</div>
+                <div class="v">
+                  Prosty model prognozy (średnia krocząca + trend) do
+                  wyznaczania punktu zamówienia — metodologia pokazana w
+                  dashboardzie obok.
+                </div>
+              </div>
+              <div class="case-field">
+                <div class="k">Efekt</div>
+                <div class="v">
+                  Wcześniejsze ostrzeganie o zbliżającym się braku zapasu, mniej
+                  pilnych zamówień awaryjnych.
+                </div>
+              </div>
+            </div>
+            <div class="case-metrics">
+              <div class="case-metric"><b>14 dni</b>horyzont prognozy</div>
+              <div class="case-metric"><b>X/Y/Z</b>wys. zmienność</div>
+            </div>
+          </div>
+        </div>
+        <p
+          style="
+            margin-top: 16px;
+            font-size: 11.5px;
+            font-family: var(--font-mono);
+          "
+        >
+          * wartości ilustracyjne — do zastąpienia rzeczywistymi, możliwymi do
+          omówienia na rozmowie
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="barcode" id="barcode3"></div></div>
+
+    <!-- ============ DASHBOARDY ============ -->
+    <section id="dashboardy">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">D-04 // Dashboardy</div>
+            <h2>Analiza w praktyce</h2>
+          </div>
+          <p style="max-width: 420px; font-size: 13.5px">
+            Dane poniżej są
+            <strong style="color: var(--text)">syntetyczne</strong> — generowane
+            w przeglądarce na potrzeby prezentacji, żeby nie ujawniać danych
+            operacyjnych pracodawcy. Metody (regresja, MAPE, klasyfikacja
+            ABC/XYZ) są rzeczywiste.
+          </p>
+        </div>
+
+        <div class="dash-tabs">
+          <button class="dash-tab active" data-tab="inv">
+            Stany magazynowe + prognoza
+          </button>
+          <button class="dash-tab" data-tab="abc">Rotacja ABC/XYZ</button>
+          <button class="dash-tab" data-tab="lead">Czasy realizacji</button>
+        </div>
+
+        <!-- ---- PANEL 1: INVENTORY + FORECAST (priority) ---- -->
+        <div class="dash-panel active" id="panel-inv">
+          <div class="dash-controls">
+            <div>
+              <label>Projekt</label>
+              <select id="clientSelect">
+                <option value="0">Projekt A — design dziecięcy</option>
+                <option value="1">Projekt B — sprzęt sportowy</option>
+                <option value="2">Projekt C — oświetlenie</option>
+                <option value="3">Projekt D — kosmetyki/biżuteria</option>
+              </select>
+            </div>
+            <div>
+              <label>Kategoria</label>
+              <select id="categorySelect">
+                <option value="rotating">Artykuły rotujące</option>
+                <option value="nonrotating">Artykuły nierotujące</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="kpi-row" id="invKpis"></div>
+
+          <div class="chart-card">
+            <div class="chart-title">
+              <span
+                >Stan magazynowy — historia (60 dni) i prognoza (+14 dni)</span
+              ><span id="chartSubtitle"></span>
+            </div>
+            <div class="chart-wrap"><canvas id="invChart"></canvas></div>
+            <div class="legend-hint">
+              <span
+                ><i style="background: var(--accent-2)"></i>Stan
+                historyczny</span
+              >
+              <span
+                ><i
+                  style="
+                    background: var(--accent);
+                    border-top: 2px dashed var(--accent);
+                    height: 0;
+                  "
+                ></i
+                >Prognoza (regresja liniowa)</span
+              >
+              <span
+                ><i style="background: var(--danger)"></i>Punkt zamówienia
+                (reorder point)</span
+              >
+              <span
+                ><i style="background: var(--text-muted)"></i>Zapas
+                bezpieczeństwa</span
+              >
+            </div>
+          </div>
+
+          <div class="data-table-card">
+            <div class="chart-title">Szczegóły — ostatnie 10 dni</div>
+            <table class="dtable">
+              <thead>
+                <tr>
+                  <th>Dzień</th>
+                  <th class="num">Stan (szt.)</th>
+                  <th class="num">Zmiana d/d</th>
+                  <th>Uzupełnienie</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="invTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="dash-two-col">
+            <div class="method-box">
+              <div class="eyebrow" style="margin-bottom: 8px">Metodologia</div>
+              <p style="color: var(--text)">
+                1) Z ostatnich 14 dni liczę średnie dzienne zużycie i dopasowuję
+                regresję liniową.<br />
+                2) Rzutuję trend o 14 dni w przód, aby uzyskać prognozę
+                stanu.<br />
+                3) Punkt zamówienia = zapas bezpieczeństwa + (czas dostawy ×
+                średnie dzienne zużycie).<br />
+                4) Dokładność prognozy weryfikuję metodą backtestingu: model
+                uczony na starszych danych jest sprawdzany na 7 ostatnich,
+                znanych dniach (błąd = MAPE).
+              </p>
+            </div>
+            <div class="method-box" style="background: var(--surface)">
+              <div class="eyebrow" style="margin-bottom: 8px">
+                Jak to czytać
+              </div>
+              <p style="color: var(--text-muted); font-size: 13px">
+                Linia turkusowa to realny (symulowany) stan. Przerywana
+                pomarańczowa to prognoza. Gdy przecina czerwoną linię punktu
+                zamówienia — to sygnał do złożenia zamówienia, zanim zapas
+                spadnie do zera.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- PANEL 2: ABC/XYZ ---- -->
+        <div class="dash-panel" id="panel-abc">
+          <div class="kpi-row" id="abcKpis"></div>
+          <div class="dash-two-col">
+            <div class="chart-card" style="margin-bottom: 0">
+              <div class="chart-title">
+                <span>Rozkład wartości sprzedaży wg SKU (krzywa Pareto)</span>
+              </div>
+              <div class="chart-wrap" style="height: 300px">
+                <canvas id="paretoChart"></canvas>
+              </div>
+            </div>
+            <div class="chart-card" style="margin-bottom: 0">
+              <div class="chart-title">
+                <span>Macierz ABC × XYZ (liczba SKU)</span>
+              </div>
+              <div class="matrix" id="abcMatrix"></div>
+              <p style="font-size: 11.5px; margin-top: 14px">
+                A/B/C = udział w wartości wydań · X/Y/Z = zmienność popytu (X =
+                stabilny, Z = nieregularny)
+              </p>
+            </div>
+          </div>
+          <div class="data-table-card">
+            <div class="chart-title">
+              Top 10 SKU wg udziału w wartości wydań
+            </div>
+            <table class="dtable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th class="num">Wartość (jedn. umowne)</th>
+                  <th class="num">Udział skumulowany</th>
+                  <th>Klasa ABC</th>
+                  <th>Klasa XYZ</th>
+                </tr>
+              </thead>
+              <tbody id="abcTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="method-box" style="margin-top: 20px">
+            <div class="eyebrow" style="margin-bottom: 8px">
+              Jak wykorzystuję to w pracy
+            </div>
+            <p style="color: var(--text-muted); font-size: 13px">
+              Kategorie <strong style="color: var(--text)">AX/AY</strong> to
+              artykuły rotujące o dużym znaczeniu — częsta kontrola, dobra
+              dostępność lokalizacji. Kategorie
+              <strong style="color: var(--text)">CZ</strong> to typowe artykuły
+              nierotujące — rzadsza inwentaryzacja, kandydaci do przeglądu
+              zasadności utrzymywania zapasu.
+            </p>
+          </div>
+        </div>
+
+        <!-- ---- PANEL 3: LEAD TIMES ---- -->
+        <div class="dash-panel" id="panel-lead">
+          <div class="kpi-row" id="leadKpis"></div>
+          <div class="chart-card">
+            <div class="chart-title">
+              <span>Średni czas realizacji wg projektu (godziny)</span>
+            </div>
+            <div class="chart-wrap"><canvas id="leadChart"></canvas></div>
+            <div class="legend-hint">
+              <span
+                ><i style="background: var(--accent-2)"></i>Przyjęcie towaru →
+                wprowadzenie do systemu</span
+              >
+              <span
+                ><i style="background: var(--accent)"></i>Zamówienie → gotowe do
+                wysyłki</span
+              >
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="kpi-row" id="invKpis"></div>
+    <div class="section-divider"><div class="barcode" id="barcode4"></div></div>
 
-      <div class="chart-card">
-        <div class="chart-title"><span>Stan magazynowy — historia (60 dni) i prognoza (+14 dni)</span><span id="chartSubtitle"></span></div>
-        <div class="chart-wrap"><canvas id="invChart"></canvas></div>
-        <div class="legend-hint">
-          <span><i style="background:var(--accent-2)"></i>Stan historyczny</span>
-          <span><i style="background:var(--accent);border-top:2px dashed var(--accent);height:0;"></i>Prognoza (regresja liniowa)</span>
-          <span><i style="background:var(--danger)"></i>Punkt zamówienia (reorder point)</span>
-          <span><i style="background:var(--text-muted)"></i>Zapas bezpieczeństwa</span>
+    <!-- ============ UMIEJĘTNOŚCI ============ -->
+    <section id="umiejetnosci">
+      <div class="wrap">
+        <div class="eyebrow">E-07 // Umiejętności</div>
+        <h2 style="margin-bottom: 36px">Zestaw narzędzi</h2>
+        <div class="skill-cols">
+          <div>
+            <h3>Analityczne</h3>
+            <div class="pillgroup">
+              <span class="pill on">Excel / Power Query</span>
+              <span class="pill on">SQL</span>
+              <span class="pill">Power BI / Tableau</span>
+              <span class="pill on">Wykorzystanie AI w pracy</span>
+              <span class="pill on">Analiza ABC/XYZ</span>
+              <span class="pill">Prognozowanie popytu</span>
+              <span class="pill">Statystyka opisowa</span>
+            </div>
+          </div>
+          <div>
+            <h3>Operacyjne / magazynowe</h3>
+            <div class="pillgroup">
+              <span class="pill on">Przyjęcia i wydania towaru</span>
+              <span class="pill on">Kontrola rotacji artykułów</span>
+              <span class="pill">Inwentaryzacje cykliczne</span>
+              <span class="pill">Systemy WMS</span>
+              <span class="pill">Optymalizacja lokalizacji</span>
+              <span class="pill">Kontrola jakości dostaw</span>
+            </div>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 30px">
+          <strong style="color: var(--text)">Wykorzystanie AI w pracy:</strong>
+          używam narzędzi AI (m.in. Claude) do przyspieszania analizy — budowy
+          zestawień, porządkowania danych, szybkiego prototypowania dashboardów
+          i automatyzacji powtarzalnych raportów. Ta strona portfolio jest tego
+          dobrym przykładem: strukturę, kod i wykresy przygotowałem z pomocą AI,
+          sam definiując wymagania, metodologię i logikę biznesową.
         </div>
       </div>
+    </section>
 
-      <div class="data-table-card">
-        <div class="chart-title">Szczegóły — ostatnie 10 dni</div>
-        <table class="dtable">
-          <thead><tr><th>Dzień</th><th class="num">Stan (szt.)</th><th class="num">Zmiana d/d</th><th>Uzupełnienie</th><th>Status</th></tr></thead>
-          <tbody id="invTableBody"></tbody>
-        </table>
-      </div>
-
-      <div class="dash-two-col">
-        <div class="method-box">
-          <div class="eyebrow" style="margin-bottom:8px;">Metodologia</div>
-          <p style="color:var(--text)">1) Z ostatnich 14 dni liczę średnie dzienne zużycie i dopasowuję regresję liniową.<br>
-          2) Rzutuję trend o 14 dni w przód, aby uzyskać prognozę stanu.<br>
-          3) Punkt zamówienia = zapas bezpieczeństwa + (czas dostawy × średnie dzienne zużycie).<br>
-          4) Dokładność prognozy weryfikuję metodą backtestingu: model uczony na starszych danych jest sprawdzany na 7 ostatnich, znanych dniach (błąd = MAPE).</p>
+    <!-- ============ KONTAKT ============ -->
+    <section id="kontakt" style="border-bottom: none">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow">F-08 // Kontakt</div>
+          <h2 style="margin-bottom: 18px">Porozmawiajmy</h2>
+          <p class="lede">
+            Otwarty na rolę Analityka danych / Analityka łańcucha dostaw.
+            Chętnie opowiem więcej o metodologii za dashboardami powyżej.
+          </p>
         </div>
-        <div class="method-box" style="background:var(--surface);">
-          <div class="eyebrow" style="margin-bottom:8px;">Jak to czytać</div>
-          <p style="color:var(--text-muted);font-size:13px;">Linia turkusowa to realny (symulowany) stan. Przerywana pomarańczowa to prognoza. Gdy przecina czerwoną linię punktu zamówienia — to sygnał do złożenia zamówienia, zanim zapas spadnie do zera.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ---- PANEL 2: ABC/XYZ ---- -->
-    <div class="dash-panel" id="panel-abc">
-      <div class="kpi-row" id="abcKpis"></div>
-      <div class="dash-two-col">
-        <div class="chart-card" style="margin-bottom:0;">
-          <div class="chart-title"><span>Rozkład wartości sprzedaży wg SKU (krzywa Pareto)</span></div>
-          <div class="chart-wrap" style="height:300px;"><canvas id="paretoChart"></canvas></div>
-        </div>
-        <div class="chart-card" style="margin-bottom:0;">
-          <div class="chart-title"><span>Macierz ABC × XYZ (liczba SKU)</span></div>
-          <div class="matrix" id="abcMatrix"></div>
-          <p style="font-size:11.5px;margin-top:14px;">A/B/C = udział w wartości wydań · X/Y/Z = zmienność popytu (X = stabilny, Z = nieregularny)</p>
+        <div class="id-card">
+          <div class="idrow">
+            <span>E-mail</span><span>twoj.email@przyklad.pl</span>
+          </div>
+          <div class="idrow">
+            <span>Telefon</span><span>+48 000 000 000</span>
+          </div>
+          <div class="idrow">
+            <span>LinkedIn</span><span>linkedin.com/in/twoj-profil</span>
+          </div>
+          <div class="idrow">
+            <span>Lokalizacja</span><span>Wrocław, Polska</span>
+          </div>
         </div>
       </div>
-      <div class="data-table-card">
-        <div class="chart-title">Top 10 SKU wg udziału w wartości wydań</div>
-        <table class="dtable">
-          <thead><tr><th>#</th><th class="num">Wartość (jedn. umowne)</th><th class="num">Udział skumulowany</th><th>Klasa ABC</th><th>Klasa XYZ</th></tr></thead>
-          <tbody id="abcTableBody"></tbody>
-        </table>
-      </div>
+    </section>
 
-      <div class="method-box" style="margin-top:20px;">
-        <div class="eyebrow" style="margin-bottom:8px;">Jak wykorzystuję to w pracy</div>
-        <p style="color:var(--text-muted);font-size:13px;">Kategorie <strong style="color:var(--text)">AX/AY</strong> to artykuły rotujące o dużym znaczeniu — częsta kontrola, dobra dostępność lokalizacji. Kategorie <strong style="color:var(--text)">CZ</strong> to typowe artykuły nierotujące — rzadsza inwentaryzacja, kandydaci do przeglądu zasadności utrzymywania zapasu.</p>
-      </div>
-    </div>
+    <footer class="wrap">
+      <span>© 2026 — Portfolio analityczne</span>
+      <span>Dane w dashboardach: syntetyczne / ilustracyjne</span>
+    </footer>
 
-    <!-- ---- PANEL 3: LEAD TIMES ---- -->
-    <div class="dash-panel" id="panel-lead">
-      <div class="kpi-row" id="leadKpis"></div>
-      <div class="chart-card">
-        <div class="chart-title"><span>Średni czas realizacji wg projektu (godziny)</span></div>
-        <div class="chart-wrap"><canvas id="leadChart"></canvas></div>
-        <div class="legend-hint">
-          <span><i style="background:var(--accent-2)"></i>Przyjęcie towaru → wprowadzenie do systemu</span>
-          <span><i style="background:var(--accent)"></i>Zamówienie → gotowe do wysyłki</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="section-divider"><div class="barcode" id="barcode4"></div></div>
-
-<!-- ============ UMIEJĘTNOŚCI ============ -->
-<section id="umiejetnosci">
-  <div class="wrap">
-    <div class="eyebrow">E-07 // Umiejętności</div>
-    <h2 style="margin-bottom:36px;">Zestaw narzędzi</h2>
-    <div class="skill-cols">
-      <div>
-        <h3>Analityczne</h3>
-        <div class="pillgroup">
-          <span class="pill on">Excel / Power Query</span>
-          <span class="pill on">SQL</span>
-          <span class="pill">Power BI / Tableau</span>
-          <span class="pill on">Wykorzystanie AI w pracy</span>
-          <span class="pill on">Analiza ABC/XYZ</span>
-          <span class="pill">Prognozowanie popytu</span>
-          <span class="pill">Statystyka opisowa</span>
-        </div>
-      </div>
-      <div>
-        <h3>Operacyjne / magazynowe</h3>
-        <div class="pillgroup">
-          <span class="pill on">Przyjęcia i wydania towaru</span>
-          <span class="pill on">Kontrola rotacji artykułów</span>
-          <span class="pill">Inwentaryzacje cykliczne</span>
-          <span class="pill">Systemy WMS</span>
-          <span class="pill">Optymalizacja lokalizacji</span>
-          <span class="pill">Kontrola jakości dostaw</span>
-        </div>
-      </div>
-    </div>
-    <div class="note" style="margin-top:30px;">
-      <strong style="color:var(--text)">Wykorzystanie AI w pracy:</strong> używam narzędzi AI (m.in. Claude) do przyspieszania analizy —
-      budowy zestawień, porządkowania danych, szybkiego prototypowania dashboardów i automatyzacji powtarzalnych raportów.
-      Ta strona portfolio jest tego dobrym przykładem: strukturę, kod i wykresy przygotowałem z pomocą AI, sam definiując
-      wymagania, metodologię i logikę biznesową.
-    </div>
-  </div>
-</section>
-
-<!-- ============ KONTAKT ============ -->
-<section id="kontakt" style="border-bottom:none;">
-  <div class="wrap contact-grid">
-    <div>
-      <div class="eyebrow">F-08 // Kontakt</div>
-      <h2 style="margin-bottom:18px;">Porozmawiajmy</h2>
-      <p class="lede">Otwarty na rolę Analityka danych / Analityka łańcucha dostaw. Chętnie opowiem więcej o metodologii za dashboardami powyżej.</p>
-    </div>
-    <div class="id-card">
-      <div class="idrow"><span>E-mail</span><span>twoj.email@przyklad.pl</span></div>
-      <div class="idrow"><span>Telefon</span><span>+48 000 000 000</span></div>
-      <div class="idrow"><span>LinkedIn</span><span>linkedin.com/in/twoj-profil</span></div>
-      <div class="idrow"><span>Lokalizacja</span><span>Wrocław, Polska</span></div>
-    </div>
-  </div>
-</section>
-
-<footer class="wrap">
-  <span>© 2026 — Portfolio analityczne</span>
-  <span>Dane w dashboardach: syntetyczne / ilustracyjne</span>
-</footer>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
